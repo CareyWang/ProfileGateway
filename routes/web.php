@@ -11,10 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::view('/', 'welcome');
 
 Auth::routes();
+Route::get('register/confirm/{token}', 'UsersController@confirmEmail')->name('register.confirm');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::view('/pref', 'config-generator');
