@@ -1,18 +1,17 @@
 <template>
   <div>
     <b-form>
-      <b-form-group label="api mode:" id="api_mode">
-        <b-form-checkbox-group v-model="common.api_mode" id="api_mode">
-          <b-form-checkbox value="true">true</b-form-checkbox>
-          <b-form-checkbox value="false">false</b-form-checkbox>
-        </b-form-checkbox-group>
+      <b-form-group label="api_mode:">
+        <b-form-radio-group v-model="common.api_mode">
+          <b-form-radio value="true">true</b-form-radio>
+          <b-form-radio value="false">false</b-form-radio>
+        </b-form-radio-group>
       </b-form-group>
 
       <b-form-group label="api_access_token:" label-for="api_access_token">
         <b-form-input
           id="api_access_token"
           v-model="common.api_access_token"
-          required
           placeholder="Enter Your api access token"
         ></b-form-input>
       </b-form-group>
@@ -25,25 +24,24 @@
         ></b-form-input>
       </b-form-group>
 
-      <b-form-group label="enable_insert:" label-for="enable_insert">
-        <b-form-checkbox-group v-model="common.enable_insert" id="enable_insert">
-          <b-form-checkbox value="true">true</b-form-checkbox>
-          <b-form-checkbox value="false">false</b-form-checkbox>
-        </b-form-checkbox-group>
+      <b-form-group label="enable_insert:">
+        <b-form-radio-group v-model="common.enable_insert">
+          <b-form-radio value="true">true</b-form-radio>
+          <b-form-radio value="false">false</b-form-radio>
+        </b-form-radio-group>
       </b-form-group>
 
-      <b-form-group label="prepend_insert_url" id="prepend_insert_url">
-        <b-form-checkbox-group v-model="common.prepend_insert_url" id="prepend_insert_url">
-          <b-form-checkbox value="true">true</b-form-checkbox>
-          <b-form-checkbox value="false">false</b-form-checkbox>
-        </b-form-checkbox-group>
+      <b-form-group label="prepend_insert_url:">
+        <b-form-radio-group v-model="common.prepend_insert_url">
+          <b-form-radio value="true">true</b-form-radio>
+          <b-form-radio value="false">false</b-form-radio>
+        </b-form-radio-group>
       </b-form-group>
 
       <b-form-group label="exclude_remarks:" label-for="exclude_remarks">
         <b-form-input
           id="exclude_remarks"
           v-model="common.exclude_remarks"
-          required
           placeholder="exclude_remarks"
         ></b-form-input>
       </b-form-group>
@@ -52,19 +50,18 @@
         <b-form-input
           id="include_remarks"
           v-model="common.include_remarks"
-          required
           placeholder="include_remarks"
         ></b-form-input>
       </b-form-group>
 
-      <b-form-group label="enable_filter" id="enable_filter">
-        <b-form-checkbox-group v-model="common.enable_filter" id="enable_filter">
-          <b-form-checkbox value="true">true</b-form-checkbox>
-          <b-form-checkbox value="false">false</b-form-checkbox>
-        </b-form-checkbox-group>
+      <b-form-group label="enable_filter:">
+        <b-form-radio-group v-model="common.enable_filter">
+          <b-form-radio value="true">true</b-form-radio>
+          <b-form-radio value="false">false</b-form-radio>
+        </b-form-radio-group>
       </b-form-group>
 
-      <b-form-group label="filter_script" id="filter_script">
+      <b-form-group label="filter_script" label-for="filter_script">
         <b-form-textarea
           id="filter_script"
           v-model="common.filter_script"
@@ -74,105 +71,85 @@
         ></b-form-textarea>
       </b-form-group>
 
-      <b-form-group label="default_external_config" id="default_external_config">
+      <b-form-group label="default_external_config" label-for="default_external_config">
         <b-form-input
           id="default_external_config"
           v-model="common.default_external_config"
-          required
           placeholder="config/example_external_config.yml"
         ></b-form-input>
       </b-form-group>
 
-      <b-form-group label="base_path" id="base_path">
-        <b-form-input id="base_path" v-model="common.base_path" required placeholder="base_path"></b-form-input>
+      <b-form-group label="base_path:" label-for="base_path">
+        <b-form-input id="base_path" v-model="common.base_path" placeholder="base_path"></b-form-input>
       </b-form-group>
 
-      <b-form-group label="clash_rule_base" id="clash_rule_base">
+      <b-form-group label="clash_rule_base:" label-for="clash_rule_base">
         <b-form-input
           id="clash_rule_base"
           v-model="common.clash_rule_base"
-          required
           placeholder="clash_rule_base"
         ></b-form-input>
       </b-form-group>
-      <b-form-group label="surge_rule_base" id="surge_rule_base">
+      <b-form-group label="surge_rule_base:" label-for="surge_rule_base">
         <b-form-input
           id="surge_rule_base"
           v-model="common.surge_rule_base"
-          required
           placeholder="surge_rule_base"
         ></b-form-input>
       </b-form-group>
-      <b-form-group label="surfboard_rule_base" id="surfboard_rule_base">
+      <b-form-group label="surfboard_rule_base:" label-for="surfboard_rule_base">
         <b-form-input
           id="surfboard_rule_base"
           v-model="common.surfboard_rule_base"
-          required
           placeholder="surfboard_rule_base"
         ></b-form-input>
       </b-form-group>
-      <b-form-group label="mellow_rule_base" id="mellow_rule_base">
+      <b-form-group label="mellow_rule_base:" label-for="mellow_rule_base">
         <b-form-input
           id="mellow_rule_base"
           v-model="common.mellow_rule_base"
-          required
           placeholder="mellow_rule_base"
         ></b-form-input>
       </b-form-group>
-      <b-form-group label="quan_rule_base" id="quan_rule_base">
+      <b-form-group label="quan_rule_base:" label-for="quan_rule_base">
         <b-form-input
           id="quan_rule_base"
           v-model="common.quan_rule_base"
-          required
           placeholder="quan_rule_base"
         ></b-form-input>
       </b-form-group>
-      <b-form-group label="quanx_rule_base" id="quanx_rule_base">
+      <b-form-group label="quanx_rule_base:" label-for="quanx_rule_base">
         <b-form-input
           id="quanx_rule_base"
           v-model="common.quanx_rule_base"
-          required
           placeholder="quanx_rule_base"
         ></b-form-input>
       </b-form-group>
-      <b-form-group label="loon_rule_base" id="loon_rule_base">
+      <b-form-group label="loon_rule_base:" label-for="loon_rule_base">
         <b-form-input
           id="loon_rule_base"
           v-model="common.loon_rule_base"
-          required
           placeholder="loon_rule_base"
         ></b-form-input>
       </b-form-group>
-      <b-form-group label="sssub_rule_base" id="sssub_rule_base">
+      <b-form-group label="sssub_rule_base:" label-for="sssub_rule_base">
         <b-form-input
           id="sssub_rule_base"
           v-model="common.sssub_rule_base"
-          required
           placeholder="sssub_rule_base"
         ></b-form-input>
       </b-form-group>
-      
-      <b-form-group label="proxy_config" id="proxy_config">
-        <b-form-input
-          id="proxy_config"
-          v-model="common.proxy_config"
-          required
-          placeholder="proxy_config"
-        ></b-form-input>
+
+      <b-form-group label="proxy_config:" label-for="proxy_config">
+        <b-form-input id="proxy_config" v-model="common.proxy_config" placeholder="proxy_config"></b-form-input>
       </b-form-group>
-      <b-form-group label="proxy_ruleset" id="proxy_ruleset">
-        <b-form-input
-          id="proxy_ruleset"
-          v-model="common.proxy_ruleset"
-          required
-          placeholder="proxy_ruleset"
-        ></b-form-input>
+      <b-form-group label="proxy_ruleset:" label-for="proxy_ruleset">
+        <b-form-input id="proxy_ruleset" v-model="common.proxy_ruleset" placeholder="proxy_ruleset"></b-form-input>
       </b-form-group>
-      <b-form-group label="proxy_subscription" id="proxy_subscription">
+      <b-form-group label="proxy_subscription:" label-for="proxy_subscription">
         <b-form-input
           id="proxy_subscription"
           v-model="common.proxy_subscription"
-          required
           placeholder="proxy_subscription"
         ></b-form-input>
       </b-form-group>
@@ -194,7 +171,7 @@ export default {
     return {
       common: {
         api_mode: true,
-        api_access_token: Math.random().toString(36).slice(-10),
+        api_access_token: this.getRandomStr(10),
         default_url: "",
         enable_insert: true,
         insert_url: "",
@@ -220,5 +197,11 @@ export default {
       },
     };
   },
+
+  methods: {
+    getRandomStr(len) {
+      return Math.random().toString(36).slice(-len)
+    }
+  }
 };
 </script>
